@@ -39,7 +39,7 @@
 
                      <div class="form-group">
                         <label for="foto">Foto</label>
-                              <input type="file" id="foto" name="foto"  class="form-control" required oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
+                              <input type="file" id="foto" name="foto"  class="form-control">
                             <span class="help-block with-errors"></span>
                         </div>
                     
