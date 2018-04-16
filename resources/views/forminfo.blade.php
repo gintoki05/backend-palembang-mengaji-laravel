@@ -19,7 +19,7 @@
 
                     <div class="form-group">
                       <label for="deskripsi">Deskripsi</label>
-                          <input type="text" id="deskripsi" name="deskripsi"  class="form-control" required oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
+                          <textarea rows"10" id="deskripsi" name="deskripsi"  class="form-control" required oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')"></textarea>
                           <span class="help-block with-errors"></span>
                       </div>
                    
