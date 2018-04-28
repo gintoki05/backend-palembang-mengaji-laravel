@@ -114,18 +114,7 @@ class InfoController extends Controller
      */
     public function destroy($id)
     {
-        $info = Info::findOrFail($id);
-
-        if (!$info->foto == NULL){
-            unlink(public_path($info->foto));
-        }
-
         Info::destroy($id);
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Info Deleted'
-        ]);
     }
 
     public function info()
@@ -140,8 +129,8 @@ class InfoController extends Controller
                 return '<img class="rounded-square" width="50" height="50" src="'. url($info->foto) .'" alt="">';
             })
            ->addColumn('action', function($info){
-               return  '<button onclick="editForm('. $info->id .')" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</button> ' .
-                        '<button onclick="deleteData('. $info->id .')" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</a>';
+               return  '<button onclick="editForm('. $info->id .')" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</button> ' ;
+                    //    '<a onclick="deleteData('. $info->id .')" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</a>';
             })
            ->rawColumns(['show_foto', 'action'])->make(true);
     }
